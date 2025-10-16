@@ -1,40 +1,23 @@
-public class Llbrodigital extends LIBRO {
-    private double tamaño;
-    private boolean Disponibilidad;
 
-    public Llbrodigital() {
-    }
+    class Llbrodigital extends LIBRO {
+        private double tamaño;
+        private boolean disponibilidad;
 
-    public Llbrodigital(String titulo, String autor, double precio, int cantidade, double tamaño, boolean disponibilidad) {
-        super(titulo, autor, precio, cantidade);
-        this.tamaño = tamaño;
-        Disponibilidad = disponibilidad;
-    }
+        public Llbrodigital(String codigo, String titulo, String autor, double precio, int cantidade, double tamaño, boolean disponibilidad) {
+            super(codigo, titulo, autor, precio, cantidade);
+            this.tamaño = tamaño;
+            this.disponibilidad = disponibilidad;
+        }
 
-    public double getTamaño() {
-        return tamaño;
+        @Override
+        public String mostrarLibro() {
+            return "\n--- LIBRO DIGITAL ---" +
+                    "\nCódigo: " + codigo +
+                    "\nTítulo: " + titulo +
+                    "\nAutor: " + autor +
+                    "\nPrecio: $" + precio +
+                    "\nCantidad disponible: " + cantidade +
+                    "\nTamaño: " + tamaño + " MB" +
+                    "\nDisponible para préstamo: " + disponibilidad;
+        }
     }
-
-    public void setTamaño(double tamaño) {
-        this.tamaño = tamaño;
-    }
-
-    public boolean isDisponibilidad() {
-        return Disponibilidad;
-    }
-
-    public void setDisponibilidad(boolean disponibilidad) {
-        Disponibilidad = disponibilidad;
-    }
-
-    @Override
-    public String toString() {
-        return "Llbrodigital{" +
-                "tamaño=" + tamaño +
-                ", Disponibilidad=" + Disponibilidad +
-                '}';
-    }
-    public String mostrarLibro(){
-        return ("\n--------------------------" +"\n         LIBRO"+"\n--------------------------" +"\nTítulo: "+ titulo + "\nAutor: " + autor +"\nPrecio: $" + precio +"\nCantidad de ejemplares: " +cantidade);
-    }
-}

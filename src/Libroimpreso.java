@@ -1,33 +1,25 @@
 public class Libroimpreso extends LIBRO{
 
-    private double peso;
 
-    public Libroimpreso(String titulo, String autor, double precio, int cantidadEjemplares) {
-        super(titulo, autor, precio, cantidadEjemplares);
-    }
+        private double tamaño;
+        private boolean disponibilidad;
 
-    public Libroimpreso(String titulo, String autor, double precio, int cantidadEjemplares, double peso) {
-        super(titulo, autor, precio, cantidadEjemplares);
-        this.peso = peso;
-    }
+        public Libroimpreso(String codigo, String titulo, String autor, double precio, int cantidade, double tamaño, boolean disponibilidad) {
+            super(codigo, titulo, autor, precio, cantidade);
+            this.tamaño = tamaño;
+            this.disponibilidad = disponibilidad;
+        }
 
-    public double getPeso() {
-        return peso;
-    }
+        @Override
+        public String mostrarLibro() {
+            return "\n--- LIBRO DIGITAL ---" +
+                    "\nCódigo: " + codigo +
+                    "\nTítulo: " + titulo +
+                    "\nAutor: " + autor +
+                    "\nPrecio: $" + precio +
+                    "\nCantidad disponible: " + cantidade +
+                    "\nTamaño: " + tamaño + " MB" +
+                    "\nDisponible para préstamo: " + disponibilidad;
+        }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
     }
-
-    @Override
-    public String toString() {
-        return "LibroImpreso{" +
-                "peso=" + peso +
-                '}';
-    }
-
-    @Override
-    public String mostrarLibro(){
-        return ("\n--------------------------" +"\n    LIBRO IMPRESO"+"\n--------------------------" +"\nTítulo: "+ titulo + "\nAutor: " + autor +"\nPrecio: $" + precio +"\nCantidad de ejemplares: " +cantidade +"Peso: " +peso +"g");
-    }
-}
